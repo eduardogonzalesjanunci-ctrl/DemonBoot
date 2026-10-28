@@ -1,0 +1,18 @@
+{
+  "name": "demonboot",
+  "version": "1.0.0",
+  "description": "DemonBOOT - Discord bot for MTA Roleplay servers",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js",
+    "build": "node -e \"require('./src/config'); require('./src/web/server'); require('./src/handlers/commandHandler'); require('./src/handlers/eventHandler'); ['src/commands/slash/setupwhitelist.js','src/commands/slash/setuptickets.js','src/commands/clear.js','src/commands/slash/kick.js','src/commands/slash/ban.js','src/commands/slash/mute.js','src/commands/prefix/setupfac.js','src/systems/whitelist.js','src/systems/tickets.js','src/utils/moderation.js','src/events/ready.js','src/events/guildMemberAdd.js','src/events/messageCreate.js','src/events/interactionCreate.js'].forEach(f=>require('./'+f)); console.log('Build OK: all modules loaded.');\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0"
+  }
+}
